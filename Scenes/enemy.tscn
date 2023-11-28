@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvcs5aakmupjc"]
+
+[ext_resource type="Script" path="res://Scenes/Enemy.cs" id="1_5jkbh"]
+[ext_resource type="Texture2D" uid="uid://2tm1ia1eiwx4" path="res://Sprites/Enemy.png" id="2_66t1c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hyttj"]
+size = Vector2(29.5, 28.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8jjk"]
+size = Vector2(34, 32)
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_5jkbh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_hyttj")
+
+[node name="AttackRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_m8jjk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.57037
+texture = ExtResource("2_66t1c")
+
+[connection signal="body_entered" from="AttackRange" to="." method="OnAttackRangeBodyEnter"]
+[connection signal="body_exited" from="AttackRange" to="." method="OnAttackRangeBodyExit"]

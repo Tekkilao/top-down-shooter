@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cptck6k00mjsk"]
+[gd_scene load_steps=4 format=3 uid="uid://cptck6k00mjsk"]
 
 [ext_resource type="Script" path="res://world.cs" id="1_icrav"]
 [ext_resource type="PackedScene" uid="uid://dhfalwq040tp2" path="res://Scenes/player.tscn" id="1_y30yv"]
+[ext_resource type="PackedScene" uid="uid://cvcs5aakmupjc" path="res://Scenes/enemy.tscn" id="3_qw5tt"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_icrav")
 
 [node name="Player" parent="." instance=ExtResource("1_y30yv")]
+
+[node name="Enemy" parent="." instance=ExtResource("3_qw5tt")]
+position = Vector2(424, 169)
