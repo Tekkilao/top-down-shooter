@@ -15,7 +15,6 @@ public partial class Enemy : CharacterBody2D
     public override void _Ready()
     {
         player = (player)GetTree().Root.GetNode("World").GetNode("Player");
-        GD.Print(player.Name);
         attack_speed = 1 / aps;
         time_until_attack = attack_speed;
     }
@@ -58,7 +57,6 @@ public partial class Enemy : CharacterBody2D
     {
         if (body.IsInGroup("player"))
         {
-            GD.Print("entered");
             within_attack_range = true;
         }
     }
@@ -67,7 +65,6 @@ public partial class Enemy : CharacterBody2D
     {
         if (body.IsInGroup("player"))
         {
-            GD.Print("Exit");
             within_attack_range = true;
             time_until_attack = attack_speed;
         }
