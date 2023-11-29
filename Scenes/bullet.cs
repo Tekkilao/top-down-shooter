@@ -6,7 +6,7 @@ public partial class bullet : RigidBody2D
     // [Export] public float damage = 10;
     public Gun gun;
     public float damage;
-    	[Export] PackedScene blood_scn;
+    [Export] PackedScene blood_scn;
 
 
     public override void _Ready()

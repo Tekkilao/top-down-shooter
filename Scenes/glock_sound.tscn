@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvqnugufresus"]
+
+[ext_resource type="AudioStream" uid="uid://l070eik111ej" path="res://Sounds/pistolShoot.mp3" id="1_e1v44"]
+
+[node name="glockSound" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_e1v44")
+volume_db = 3.714
+pitch_scale = 1.24

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/bullet.cs" id="1_gnvq1"]
 [ext_resource type="Texture2D" uid="uid://bmw781bk3q578" path="res://Sprites/bullet.png" id="1_yefv1"]
-[ext_resource type="PackedScene" uid="uid://biritrstw5q0g" path="res://Scenes/blood.tscn" id="2_bast5"]
+[ext_resource type="PackedScene" uid="uid://djlkow13ntbhj" path="res://Scenes/blood.tscn" id="2_bast5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5uy5e"]
 size = Vector2(2, 0.5)
