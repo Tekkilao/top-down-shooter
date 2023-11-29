@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://biritrstw5q0g"]
+[gd_scene load_steps=3 format=3 uid="uid://djlkow13ntbhj"]
 
 [ext_resource type="Texture2D" uid="uid://ch2jkla0pbhe0" path="res://Sprites/blood.png" id="1_smyxd"]
-[ext_resource type="Script" path="res://Blood.cs" id="2_eho1r"]
+[ext_resource type="Script" path="res://Scenes/Blood.cs" id="2_5f4xk"]
 
-[node name="Blood" type="CPUParticles2D"]
+[node name="CPUParticles2D" type="CPUParticles2D"]
 amount = 32
 lifetime = 0.2
 explosiveness = 1.0
@@ -23,7 +23,7 @@ radial_accel_max = 3.0
 scale_amount_min = 0.05
 scale_amount_max = 0.05
 color = Color(0.901961, 0.152941, 0.152941, 1)
-script = ExtResource("2_eho1r")
+script = ExtResource("2_5f4xk")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.15
