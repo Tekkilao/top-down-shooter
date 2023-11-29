@@ -9,6 +9,7 @@ public partial class Gun : Node2D
     [Export] float bullet_damage = 30f;
     [Export] int gun_ammo = 6;
     public AudioStreamPlayer2D glockSound;
+    public AnimationPlayer animation;
 
     float fire_rate;
 
@@ -17,6 +18,8 @@ public partial class Gun : Node2D
     public override void _Ready()
     {
         glockSound = (AudioStreamPlayer2D)GetTree().Root.GetNode("World").GetNode("Player").GetNode("Gun").GetNode("glockSound");
+        animation = (AnimationPlayer)GetTree().Root.GetNode("World").GetNode("Player").GetNode("Gun").GetNode("AnimationPlayer");
+
         fire_rate = 1 / bps;
     }
 
@@ -24,6 +27,7 @@ public partial class Gun : Node2D
     {
         if (Input.IsActionJustPressed("click") && time_until_fire > fire_rate && gun_ammo > 0)
         {
+            animation.Play("muzzle_flash");
             glockSound.Play();
             RigidBody2D bullet = bullet_scn.Instantiate<RigidBody2D>();
             bullet.Rotation = GlobalRotation;

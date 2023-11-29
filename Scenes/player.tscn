@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhfalwq040tp2"]
+[gd_scene load_steps=13 format=3 uid="uid://dhfalwq040tp2"]
 
 [ext_resource type="Script" path="res://Scenes/player.cs" id="1_byt8i"]
 [ext_resource type="Texture2D" uid="uid://byort1qk0ibnv" path="res://Sprites/Player.png" id="2_7jmi8"]
@@ -7,12 +7,34 @@
 [ext_resource type="PackedScene" uid="uid://ixn37i2loi2b" path="res://Scenes/bullet.tscn" id="4_6ocfu"]
 [ext_resource type="Texture2D" uid="uid://dm155tgpvar3q" path="res://Sprites/glock.png" id="5_4rpuj"]
 [ext_resource type="PackedScene" uid="uid://bvqnugufresus" path="res://Scenes/glock_sound.tscn" id="7_ngowp"]
+[ext_resource type="Texture2D" uid="uid://dafia15k11iul" path="res://Sprites/muzzle.png" id="8_gev8d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e838f"]
 size = Vector2(28, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eiqu1"]
 size = Vector2(30, 29)
+
+[sub_resource type="Animation" id="Animation_j17t3"]
+resource_name = "muzzle_flash"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("muzzleFlash:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n4tyl"]
+_data = {
+"muzzle_flash": SubResource("Animation_j17t3")
+}
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_byt8i")
@@ -45,3 +67,15 @@ texture = ExtResource("5_4rpuj")
 
 [node name="glockSound" parent="Gun" instance=ExtResource("7_ngowp")]
 volume_db = -1.238
+
+[node name="muzzleFlash" type="Sprite2D" parent="Gun"]
+visible = false
+position = Vector2(4, 0.5)
+rotation = -0.178509
+scale = Vector2(0.025, 0.08)
+texture = ExtResource("8_gev8d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Gun"]
+libraries = {
+"": SubResource("AnimationLibrary_n4tyl")
+}
