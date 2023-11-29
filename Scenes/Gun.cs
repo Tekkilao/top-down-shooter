@@ -34,4 +34,9 @@ public partial class Gun : Node2D
             time_until_fire += (float)delta;
         }
     }
+
+    public float GetBulletDamage()
+    {
+        return bullet_damage;
+    }
 }

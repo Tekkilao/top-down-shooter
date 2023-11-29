@@ -51,7 +51,7 @@ public partial class Enemy : CharacterBody2D
 
     public void Attack()
     {
-        GD.Print("Attack player");
+        player.GetNode<Health>("Health").Damage(damage);
     }
 
     public void OnAttackRangeBodyEnter(Node2D body)
