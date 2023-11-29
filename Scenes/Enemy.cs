@@ -7,6 +7,8 @@ public partial class Enemy : CharacterBody2D
     [Export] float enemySpeed = 250f;
     [Export] float damage = 10f;
     [Export] float aps = 2f;
+    [Export] PackedScene blood_scn;
+
     
     float attack_speed;
     float time_until_attack;
@@ -51,6 +53,7 @@ public partial class Enemy : CharacterBody2D
     public void Attack()
     {
         player.GetNode<Health>("Health").Damage(damage);
+        SpawnBlood(player.GlobalPosition);
         
     }
 
@@ -68,6 +71,17 @@ public partial class Enemy : CharacterBody2D
         {
             within_attack_range = true;
             time_until_attack = attack_speed;
+        }
+    }
+
+    
+    private void SpawnBlood(Vector2 position)
+    {
+        if (blood_scn != null)
+        {
+            CpuParticles2D blood = (CpuParticles2D)blood_scn.Instantiate();
+            GetTree().Root.AddChild(blood);
+            blood.GlobalPosition = position; // Configura a posição das partículas
         }
     }
 

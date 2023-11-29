@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvcs5aakmupjc"]
+[gd_scene load_steps=7 format=3 uid="uid://cvcs5aakmupjc"]
 
 [ext_resource type="Script" path="res://Scenes/Enemy.cs" id="1_5jkbh"]
 [ext_resource type="Script" path="res://Scenes/Health.cs" id="2_07lwv"]
 [ext_resource type="Texture2D" uid="uid://2tm1ia1eiwx4" path="res://Sprites/Enemy.png" id="2_66t1c"]
+[ext_resource type="PackedScene" uid="uid://djlkow13ntbhj" path="res://Scenes/blood.tscn" id="2_kuvg4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hyttj"]
 size = Vector2(29.5, 28.5)
@@ -12,6 +13,7 @@ size = Vector2(34, 32)
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_5jkbh")
+blood_scn = ExtResource("2_kuvg4")
 
 [node name="Health" type="Node2D" parent="."]
 script = ExtResource("2_07lwv")
