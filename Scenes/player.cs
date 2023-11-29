@@ -5,7 +5,6 @@ public partial class player : CharacterBody2D
 {
 	public const float playerSpeed = 500;	
 
-
 	// private RigidBody2D bullet;
 
 
@@ -13,6 +12,14 @@ public partial class player : CharacterBody2D
 	{
 	}
 
+	// public void _Process()
+	// {
+	// 	    CpuParticles2D bullet = (CpuParticles2D)blood_scn.Instantiate<CpuParticles2D>();
+    //         bullet.Rotation = GlobalRotation;
+    //         bullet.GlobalPosition = GlobalPosition;
+    //         GetTree().Root.AddChild(bullet);
+
+	// }
 
 	public void GetInput()
 	{

@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3lskfme5sh05"]
+
+[ext_resource type="Script" path="res://Scenes/hud.cs" id="1_1e3f6"]
+[ext_resource type="Texture2D" uid="uid://ccqwr8weycnyn" path="res://Sprites/heart.png" id="1_6wt2i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hit5i"]
+bg_color = Color(0.0431373, 0.0431373, 0.0431373, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.74902, 0.803922, 0.894118, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xsadf"]
+bg_color = Color(0.619608, 0.0745098, 0.113725, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1e3f6")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 8.0
+offset_right = 256.0
+offset_bottom = 112.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hit5i")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_top = 42.0
+offset_right = 32.0
+offset_bottom = 62.0
+texture = ExtResource("1_6wt2i")
+expand_mode = 1
+
+[node name="HealthBar" type="ProgressBar" parent="Panel"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 44.0
+offset_right = 108.0
+offset_bottom = 60.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_xsadf")
+step = 1.0
+value = 100.0
+show_percentage = false

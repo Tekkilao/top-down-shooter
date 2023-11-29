@@ -11,12 +11,19 @@ public partial class Health : Node2D
         health = max_health;
     }
 
+
     public void Damage(float damage)
     {
         health -= damage;
-        if (health <= 0)
+        if (health < 0)
         {
             GetParent().QueueFree();
         }
+
+    }
+
+    public float returnHealth()
+    {
+        return health;
     }
 }

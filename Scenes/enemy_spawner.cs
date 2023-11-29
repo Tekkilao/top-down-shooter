@@ -6,7 +6,7 @@ public partial class enemy_spawner : Node2D
     [Export] PackedScene enemy_scn;
     [Export] Node2D[] spawn_points;
     [Export] float eps = 1f;
-    [Export] int max_enemies = 20;
+    [Export] int max_enemies = 1;
 
     int number_of_enemies;
     float spawn_rate;
@@ -23,14 +23,14 @@ public partial class enemy_spawner : Node2D
         var enemies_on_screen = GetTree().GetNodesInGroup("enemy");
 
 
-        if(time_until_spawn > spawn_rate && number_of_enemies <= max_enemies)
+        if(time_until_spawn > spawn_rate && number_of_enemies < max_enemies)
         {
             Spawn();
             time_until_spawn = 0;
         } else {
             time_until_spawn += (float)delta;
         }
-        number_of_enemies = enemies_on_screen.Count + 1;
+        number_of_enemies = enemies_on_screen.Count;
     }
     
     private void Spawn()

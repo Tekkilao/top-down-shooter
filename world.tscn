@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cptck6k00mjsk"]
+[gd_scene load_steps=5 format=3 uid="uid://cptck6k00mjsk"]
 
 [ext_resource type="Script" path="res://world.cs" id="1_icrav"]
 [ext_resource type="PackedScene" uid="uid://dhfalwq040tp2" path="res://Scenes/player.tscn" id="1_y30yv"]
 [ext_resource type="PackedScene" uid="uid://c0uw628x45g8m" path="res://Scenes/enemy_spawner.tscn" id="3_hpgow"]
+[ext_resource type="PackedScene" uid="uid://c3lskfme5sh05" path="res://Scenes/hud.tscn" id="4_h7y4y"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_icrav")
@@ -12,3 +13,5 @@ position = Vector2(608, 296)
 scale = Vector2(1.5, 1.5)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_hpgow")]
+
+[node name="Hud" parent="." instance=ExtResource("4_h7y4y")]
