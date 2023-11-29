@@ -33,6 +33,17 @@ public partial class Gun : Node2D
         } else {
             time_until_fire += (float)delta;
         }
+
+        Reload();
+
+    }
+
+    public void Reload()
+    {
+        if(Input.IsActionJustPressed("reload"))
+        {
+            gun_ammo = 6;
+        }
     }
 
     public float GetBulletDamage()
