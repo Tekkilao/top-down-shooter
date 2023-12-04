@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://djlkow13ntbhj" path="res://Scenes/blood.tscn" id="2_bast5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5uy5e"]
-size = Vector2(2, 0.5)
+size = Vector2(4, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxfk2"]
-size = Vector2(2, 0.625)
+size = Vector2(4.5, 1.313)
 
 [node name="Bullet" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -19,6 +19,7 @@ script = ExtResource("1_gnvq1")
 blood_scn = ExtResource("2_bast5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.1, 0)
 shape = SubResource("RectangleShape2D_5uy5e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

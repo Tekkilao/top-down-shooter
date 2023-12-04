@@ -69,7 +69,7 @@ public partial class Enemy : CharacterBody2D
     {
         if (body.IsInGroup("player"))
         {
-            within_attack_range = true;
+            within_attack_range = false;
             time_until_attack = attack_speed;
         }
     }

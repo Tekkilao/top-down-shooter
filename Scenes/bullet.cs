@@ -14,7 +14,7 @@ public partial class bullet : RigidBody2D
         gun = (Gun)GetTree().Root.GetNode("World").GetNode("Player").GetNode("Gun");
         Timer timer = GetNode<Timer>("Timer");
         timer.Timeout += () => QueueFree();
-        damage = gun.GetBulletDamage();
+        damage = gun.bullet_damage;
     }
 
     public void OnBodyEntered(Node2D body)
@@ -29,12 +29,12 @@ public partial class bullet : RigidBody2D
     }
 
     private void SpawnBlood(Vector2 position)
-{
-    if (blood_scn != null)
     {
-        CpuParticles2D blood = (CpuParticles2D)blood_scn.Instantiate();
-        GetTree().Root.AddChild(blood);
-        blood.GlobalPosition = position; // Configura a posição das partículas
+        if (blood_scn != null)
+        {
+            CpuParticles2D blood = (CpuParticles2D)blood_scn.Instantiate();
+            GetTree().Root.AddChild(blood);
+            blood.GlobalPosition = position; // Configura a posição das partículas
+        }
     }
-}
 }

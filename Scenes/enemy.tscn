@@ -30,6 +30,7 @@ position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_m8jjk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visibility_layer = 3
 rotation = 1.57037
 texture = ExtResource("2_66t1c")
 
